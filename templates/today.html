@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{ url_for('static',path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="item-container">
+            {% for item in items %}
+            <div class="item">
+                <div class="check-box-container">
+                    <div class="check-box"></div>
+                </div>
+                <div class="item-content">
+                    <div class="title-row">
+                        {{item.title}}
+                    </div>
+                    <div class="info-row">
+                        <div class="due-info">
+                            <div class="due-time">
+                                <svg width="12" height="12" viewBox="0 0 12 12" class="calendar_icon"><path fill="currentColor" fill-rule="nonzero" d="M9.5 1A1.5 1.5 0 0 1 11 2.5v7A1.5 1.5 0 0 1 9.5 11h-7A1.5 1.5 0 0 1 1 9.5v-7A1.5 1.5 0 0 1 2.5 1h7zm0 1h-7a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5zM8 7.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM8.5 4a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"></path></svg>
+                                {{item.due_time}}
+                            </div>
+                            {% if item.is_recurring %}
+                            <div class="recurring-flag">
+                                <svg width="12" height="12" viewBox="0 0 12 12" class="recurring_icon"><path fill="currentColor" d="M2.784 4.589l.07.057 1.5 1.5a.5.5 0 01-.638.765l-.07-.057L3 6.207V7a2 2 0 001.85 1.995L5 9h2.5a.5.5 0 01.09.992L7.5 10H5a3 3 0 01-2.995-2.824L2 7v-.793l-.646.647a.5.5 0 01-.638.057l-.07-.057a.5.5 0 01-.057-.638l.057-.07 1.5-1.5a.5.5 0 01.638-.057zM7 2a3 3 0 013 3v.792l.646-.646a.5.5 0 01.765.638l-.057.07-1.5 1.5a.5.5 0 01-.638.057l-.07-.057-1.5-1.5a.5.5 0 01.638-.765l.07.057.646.646V5a2 2 0 00-1.85-1.995L7 3H4.5a.5.5 0 010-1z"></path></svg>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="project-info">
+                            <div class="project-name">{{item.project_name}}</div>
+                            {% if item.section_name %}
+                            <div class="section-name">/ {{item.section_name}}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
