@@ -25,7 +25,7 @@ def complete_task(task_id: int):
 
 
 if __name__ == '__main__':
-    uvicorn.run("app:app", port=5000)
+    uvicorn.run("app:app", port=5000, host='0.0.0.0')
     print(f"Kicked off.")
 
 # TODO - Add Endpoint to handle Task Complete Order

@@ -11,14 +11,14 @@
 }
 .item {
     flex: 1;
-    display: flex;
+    display: block;
     flex-direction: row;
     align-items: stretch;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 2px solid black;
 }
 
 .check-box-container {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     flex-direction: column;
 }
@@ -27,15 +27,15 @@
     display: flex;
     justify-content: center;
     margin: 8px;
-    height: 16px;
-    width: 16px;
-    border: 1px solid black;
+    height: 28px;
+    width: 28px;
+    border: 2px solid black;
     border-radius: 50%;
 }
 
 .item-content {
     flex: 0 0 90%;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     padding: 8px 0;
     margin-left: 5px;
@@ -45,8 +45,8 @@
 .title-row {
     margin-bottom: 3px;
     flex-grow: 1;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 28px;
+    line-height: 28px;
     word-wrap: break-word;
     word-break: break-word;
     display: -webkit-box;
@@ -56,32 +56,33 @@
 }
 
 .info-row {
-    display: flex;
+    display: block;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .due-info {
-    line-height: 12px;
+    line-height: 18px;
     position: static;
     margin: 0;
-    font-size: 12px;
-    display: inline-flex;
+    font-size: 18px;
+    display: inline-block;
     align-items: center;
     color: #058527;
 }
 
 .recurring-flag {
     margin: 5px;
+    display: inline-block;
 }
 
 .project-info {
     margin-left: auto;
-    display: flex;
+    display: inline-block;;
     flex-direction: row;
     max-width: 200px;
     text-overflow: ellipsis;
     overflow: hidden;
-    font-size: 12px;
-    color: grey;
+    font-size: 18px;
+    color: black;
 }
