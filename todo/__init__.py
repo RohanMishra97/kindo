@@ -50,15 +50,22 @@ def _format_task(item):
     return task
 
 
-def get_items():
+def get_items(refresh=True):
     global _state
-    _refresh()
+    if refresh:
+        _refresh()
     tasks_due_today = []
     for k, v in _state['items'].items():
         if v['due'] and _is_due_today(v['due']['date']):
             tasks_due_today.append(_format_task(v))
     return tasks_due_today
 
-# TODO - Add Logic to handle partial updates
-# TODO - Add Logic to handle task complete event
 # TODO - Add Unit Tests
+
+
+def complete_task(task_id: int):
+    global _state
+    _state['items'].pop(task_id)
+    item = _api.items.get_by_id(task_id)
+    item.complete()
+    _api.commit()
