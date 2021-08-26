@@ -14,7 +14,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/today")
 def get_today(request: Request):
-    return templates.TemplateResponse("today.html", {"request":request, "items": todo.get_items()})
+    return templates.TemplateResponse("today.html", {"request": request, "items": todo.get_items()})
 
 
 if __name__ == '__main__':
