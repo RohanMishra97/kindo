@@ -11,12 +11,12 @@
         <div class="item-container">
             {% for item in items %}
             <div class="item">
-                <div class="check-box-container">
-                    <div data-id={{item.id}} class="check-box"></div>
-                </div>
-                <div class="item-content">
+<!--                <div class="check-box-container">-->
+<!--                    <div data-id={{item.id}} class="check-box"></div>-->
+<!--                </div>-->
+                <div class="item-content" data-id={{item.id}}>
                     <div class="title-row">
-                        {{item.title}}
+                        <a href="done/{{item.id}}">{{item.title}}</a>
                     </div>
                     <div class="info-row">
                         <div class="due-info">

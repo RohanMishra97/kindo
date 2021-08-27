@@ -1,3 +1,8 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
 .container {
     border: 1px solid #f0f0f0;
     width: auto;
@@ -18,13 +23,12 @@
 }
 
 .check-box-container {
-    display: inline-block;
+    display: inline-flex;
     justify-content: center;
-    flex-direction: column;
+    /*flex-direction: column;*/
 }
 
 .check-box {
-    display: flex;
     justify-content: center;
     margin: 8px;
     height: 28px;
@@ -34,7 +38,9 @@
 }
 
 .item-content {
-    flex: 0 0 90%;
+    margin-left: 2px;
+    width: 100%;
+    /*flex: 0 0 90%;*/
     display: inline-block;
     flex-direction: column;
     padding: 8px 0;
@@ -48,7 +54,7 @@
     font-size: 28px;
     line-height: 28px;
     word-wrap: break-word;
-    word-break: break-word;
+    word-break: break-all;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -57,18 +63,21 @@
 
 .info-row {
     display: block;
-    flex-direction: row;
-    justify-content: space-between;
+    /*flex-direction: row;*/
+    /*justify-content: space-between;*/
 }
 
 .due-info {
+    float: left;
     line-height: 18px;
-    position: static;
     margin: 0;
     font-size: 18px;
     display: inline-block;
     align-items: center;
     color: #058527;
+}
+.due-time {
+    display: inline-block;
 }
 
 .recurring-flag {
@@ -77,12 +86,20 @@
 }
 
 .project-info {
-    margin-left: auto;
-    display: inline-block;;
+    float: right;
+    margin-right: 2%;
+    display: inline-flex;
     flex-direction: row;
-    max-width: 200px;
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 18px;
     color: black;
+}
+
+.project-name {
+    display: inline;
+}
+
+.section-name {
+    display: inline;
 }

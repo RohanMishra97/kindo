@@ -18,6 +18,8 @@ def _refresh():
     for k in _keys:
         for x in _status[k]:
             _state[k][x['id']] = x
+    print(_status['items'])
+    print(_status['projects'])
 
 
 def _is_due_today(datestr):
@@ -61,7 +63,7 @@ def get_items(refresh=True):
     return tasks_due_today
 
 # TODO - Add Unit Tests
-
+# TODO - State Bug. If I close the task elsewhere, update the state to remove the task.
 
 def complete_task(task_id: int):
     global _state

@@ -21,7 +21,7 @@ def get_today(request: Request):
 def complete_task(task_id: int):
     todo.complete_task(task_id)
     print(f"Complete Task with Id {task_id}")
-    return {"target": "today"}
+    return RedirectResponse("/today")
 
 
 if __name__ == '__main__':
